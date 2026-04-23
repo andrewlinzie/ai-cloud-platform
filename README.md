@@ -86,10 +86,11 @@ dev -> staging -> prod
 No rebuilding per environment.
 
 ## 4. Environment Promotion Strategy
+
 | Environment | Deployment Type |
 |-------------|-----------------|
-| dev	        | automatic       |
-| staging	    | manual approval |
+| dev	      | automatic       |
+| staging     | manual approval |
 | prod	      | manual approval |
 
 This reduces blast radius and enforces controlled releases.
@@ -105,7 +106,7 @@ GitHub Actions triggers the workflow.
 ## Step 2 — Validation (Quality Gate)
 - Linting
 - Tests
-- 
+
 If this fails → pipeline stops
 
 ## Step 3 — Build Artifact
