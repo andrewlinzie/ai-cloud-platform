@@ -28,7 +28,7 @@ This platform consists of:
 
 At a high level:
 
-`
+```
 Developer → GitHub (api-service repo)
         ↓
 GitHub Actions (CI)
@@ -40,7 +40,7 @@ Update GitOps Repo (image tag)
 ArgoCD detects change
         ↓
 Deploy to EKS
-`
+```
 
 # ⚙️ Core Design Principles
 
