@@ -9,6 +9,8 @@ This project is a production-style cloud platform that demonstrates how to build
 
 The system is designed to reflect real-world platform engineering practices, not just isolated components.
 
+---
+
 # 🧠 System Overview
 
 This platform consists of:
@@ -24,6 +26,8 @@ This platform consists of:
 - terraform-platform -> AWS infrastructure (VPC, EKS, IAM, ECR, EC2)
 - gitops-infra -> Kubernetes deployment state (source of truth for workloads)
 
+---
+
 # 🏗️ Architecture Overview
 
 <img width="4769" height="1428" alt="image" src="https://github.com/user-attachments/assets/75d642eb-12e7-4763-904d-8d92914e149d" />
@@ -31,6 +35,8 @@ This platform consists of:
 This platform implements a GitOps-based deployment model in which CI pipelines build immutable Docker images and update the deployment state in a GitOps repository. ArgoCD continuously reconciles this state into an EKS cluster, while Terraform manages the underlying AWS infrastructure.
 
 The diagram focuses on the implemented build, deployment, and runtime architecture. Additional capabilities such as autoscaling, load testing, and observability are described below.
+
+---
 
 # ⚙️ Core Design Principles
 
@@ -84,6 +90,8 @@ No rebuilding per environment.
 | prod	      | manual approval |
 
 This reduces blast radius and enforces controlled releases.
+
+---
 
 # 🔄 Example Deployment Flow (API Service)
 
@@ -148,6 +156,8 @@ ArgoCD:
 push -> test -> build -> push -> update Git -> Argo deploys
 `
 
+---
+
 # 🧱 Infrastructure (Terraform)
 
 Terraform is used to provision:
@@ -165,6 +175,8 @@ Terraform is used to provision:
   - dev -> auto apply
   - staging -> approval required
   - prod -> approval required
+
+---
  
 # 🔧 Hybrid Architecture (Intentional)
 
@@ -190,6 +202,8 @@ So it uses:
 
 Instead of unnecessary Kubernetes complexity.
 
+---
+
 # 📦 CI/CD Systems
 
 ## GitHub Actions (Microservices + Infra)
@@ -200,6 +214,8 @@ Instead of unnecessary Kubernetes complexity.
 - Builds CMS image
 - Deploys to EC2
 - Handles container lifecycle
+
+---
 
 # ⚡ System Behavior & Scalability
 
@@ -237,6 +253,8 @@ Summary of what is demonstrated:
 
 This demonstrates real-time autoscaling behavior in a live Kubernetes environment.
 
+---
+
 # 👀 Observability Readiness
 
 The platform includes foundational observability signals:
@@ -255,6 +273,8 @@ The system is designed to support future integration with:
 - Grafana
 - centralized logging
 
+---
+
 # 🔁 Rollback Strategy
 
 Rollback is Git-driven:
@@ -266,6 +286,8 @@ This ensures:
 - fast recovery
 - no manual cluster changes
 - full traceability
+
+---
 
 # 🧠 Key Design Decisions
 
@@ -285,6 +307,8 @@ This reflects a real-world hybrid architecture where:
 
 This avoids unnecessary complexity while maintaining flexibility.
 
+---
+
 # 🚀 Future Enhancements
 
 The following improvements were identified but not implemented in the current scope:
@@ -293,6 +317,8 @@ The following improvements were identified but not implemented in the current sc
 - Advanced observability (Prometheus, Grafana, alerting)
 - Multi-AZ resilience and failover strategies
 - Enhanced retry and failure-handling mechanisms
+
+---
 
 # 💡 Key Highlights
 
@@ -304,6 +330,8 @@ The following improvements were identified but not implemented in the current sc
 - Hybrid architecture (EKS + EC2)
 - End-to-end working platform
 
+---
+
 # 🔗 Repositories
 
 - API Service: https://github.com/andrewlinzie/api-service
@@ -311,6 +339,8 @@ The following improvements were identified but not implemented in the current sc
 - CMS Monolith: https://github.com/andrewlinzie/cms-monolith
 - Terraform Platform: https://github.com/andrewlinzie/terraform-platform
 - GitOps Infrastructure: https://github.com/andrewlinzie/gitops-infra
+
+---
 
 # 🎯 What This Demonstrates
 
