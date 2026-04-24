@@ -9,6 +9,56 @@ This project is a production-style cloud platform that demonstrates how to build
 
 The system is designed to reflect real-world platform engineering practices, not just isolated components.
 
+## 🧩 Problem Statement
+
+Modern teams often struggle with fragmented deployment workflows, inconsistent environments, and unclear ownership between infrastructure and application delivery.
+
+Common challenges include:
+
+- Rebuilding artifacts for each environment, leading to inconsistencies
+- Manual deployments and lack of traceability
+- Blurred responsibilities between infrastructure, CI/CD, and runtime systems
+- Difficulty scaling services reliably under changing load
+- Overengineering internal tools that don’t require full platform complexity
+
+## 💡 Solution Approach
+
+This project addresses these challenges by designing a platform that enforces:
+
+- **Clear separation of concerns**
+  - Terraform -> infrastructure
+  - CI pipelines -> build and artifact creation
+  - GitOps (ArgoCD) -> deployment state and reconciliation
+
+- **Immutable deployment strategy**
+  - Build once -> promote across environments
+  - Eliminates environment drift
+
+- **Git as the single source of truth**
+  - Every deployment is traceable via commit history
+
+- **Scalable runtime behavior**
+  - Kubernetes-based autoscaling for API and AI services
+
+- **Pragmatic system design**
+  - Kubernetes used where needed (microservices)
+  - Simpler EC2-based deployment for internal CMS
+
+## 🧠 Design Philosophy
+
+This platform was intentionally designed to reflect real-world tradeoffs:
+
+- Not all systems require Kubernetes -> CMS remains on EC2
+- Deployment systems should be decoupled -> GitOps separates CI and CD
+- Simplicity is preferred where possible -> avoid unnecessary complexity
+- Systems should be observable and debuggable from day one
+
+The result is a platform that is:
+- scalable
+- traceable
+- maintainable
+- aligned with real-world engineering constraints
+
 ---
 
 # 🧠 System Overview
